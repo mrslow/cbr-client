@@ -1,6 +1,6 @@
 import pytest
 
-from client import Client
+from cbr_client import Client
 
 
 @pytest.fixture
