@@ -1,5 +1,5 @@
 import pytest
-from cbr_client import ClientException
+from cbr_client import ClientException, ProfileQuota, Profile
 
 base_headers = {'Accept': 'application/json', 'User-Agent': 'pytest'}
 base_url = 'https://portal5test.cbr.ru/back/rapi2'
@@ -19,7 +19,7 @@ def test_get_profile_ok(httpx_mock, client):
                             url=f'{base_url}/profile',
                             match_headers=correct_headers)
     info = client.get_profile()
-    assert isinstance(info, dict)
+    assert isinstance(info, Profile)
     # assert info['status'] == 'correct'
 
 
@@ -46,5 +46,5 @@ def test_get_profile_quota(httpx_mock, client):
                             url=f'{base_url}/profile/quota',
                             match_headers=correct_headers)
     info = client.get_profile_quota()
-    assert isinstance(info, dict)
-    assert info['UsedQuota'] == 0
+    assert isinstance(info, ProfileQuota)
+    assert info.used == 0

@@ -1,12 +1,13 @@
 import httpx
 import logging
 
-from dataclasses import dataclass, field, InitVar
+from dataclasses import dataclass, field, InitVar, MISSING
 from datetime import datetime
 from enum import Enum
 from uuid import UUID
 
 _BASE_URL = 'https://portal5test.cbr.ru/back/rapi2'
+_CHUNK_SIZE = 1024 * 64
 
 logger = logging.getLogger('cbr-client')
 logger.setLevel('DEBUG')
@@ -53,13 +54,16 @@ class Client:
             raise ClientException('Login and password are required')
 
     def get_tasks(self):
-        return self._request('GET', '/tasks')
+        resp = self._request('GET', '/tasks')
+        return [Task(item) for item in resp]
 
     def get_profile(self):
-        return self._request('GET', '/profile')
+        resp = self._request('GET', '/profile')
+        return Profile(resp)
 
     def get_profile_quota(self):
-        return self._request('GET', '/profile/quota')
+        resp = self._request('GET', '/profile/quota')
+        return ProfileQuota(resp)
 
     def get_dictionaries(self):
         return self._request('GET', '/dictionaries')
@@ -73,15 +77,20 @@ class Client:
         msg.refill(resp)
         return msg
 
+    def _partial_upload(self, f):
+        for i in range(0, len(f.content), _CHUNK_SIZE):
+            chunk = f.content[i:i + _CHUNK_SIZE]
+            headers = dict([
+                ('Content-Type', 'application/octet-stream'),
+                ('Content-Length', str(len(chunk))),
+                ('Content-Range', f'bytes {i}-{i+len(chunk)-1}/{f.size}')
+            ])
+            self._request('PUT', f.upload_url, headers=headers, data=f.content)
+
     def upload(self, msg):
         for f in msg.files:
             self._request('POST', f.session_url)
-            headers = {
-                'Content-Type': 'application/octet-stream',
-                'Content-Length': str(f.size),
-                'Content-Range': f'bytes 0-{f.size - 1}/{f.size}'
-            }
-            self._request('PUT', f.upload_url, headers=headers, data=f.content)
+            self._partial_upload(f)
 
     def finalize_message(self, msg):
         self._request('POST', f'/messages/{msg.oid}')
@@ -96,7 +105,7 @@ class Client:
 
     def get_messages(self,
                      task: str = None,
-                     type: str =None,
+                     type: str = None,
                      status: str = None,
                      page: int = 1
                      ):
@@ -118,7 +127,7 @@ class Client:
         logger.debug(f'{method} {url} {resp.status_code}')
         try:
             resp.raise_for_status()
-            if 'application/json' in resp.headers['content-type']:
+            if 'application/json' in resp.headers.get('content-type', ''):
                 return resp.json()
             else:
                 return resp.content
@@ -278,8 +287,8 @@ class File:
 
 @dataclass
 class DownloadFile(File):
-    name: str
-    content: bytes
+    name: str = field(default=MISSING)
+    content: bytes = field(default=MISSING, repr=False)
 
     def __post_init__(self):
         self.encrypted = self.name.endswith('.enc', -4)
@@ -366,3 +375,84 @@ class Sender:
         self.bik = meta.get('Bik')
         self.regnum = meta.get('RegNum')
         self.division_code = meta.get('DivisionCode')
+
+
+@dataclass
+class Task:
+    meta: InitVar[dict]
+    code: str = field(init=False)
+    name: str = field(init=False)
+    description: str = field(init=False)
+    direction: str = field(init=False)
+    allow_aspera: bool = field(init=False)
+    allow_linked_messages: bool = field(init=False)
+
+    def __post_init__(self, meta: dict):
+        self.code = meta.get('Code')
+        self.name = meta.get('Name')
+        self.description = meta.get('Description')
+        self.direction = meta.get('Direction')
+        self.allow_aspera = meta.get('AllowAspera')
+        self.allow_linked_messages = meta.get('AllowLinkedMessages')
+
+
+@dataclass
+class Profile:
+    meta: InitVar[dict]
+    short_name: str = field(init=False)
+    full_name: str = field(init=False)
+    activities: list = field(init=False)
+    inn: str = field(init=False)
+    ogrn: str = field(init=False)
+    international_id: str = field(init=False)
+    opf: str = field(init=False)
+    email: str = field(init=False)
+    address: str = field(init=False)
+    phone: str = field(init=False)
+    created: datetime = field(init=False)
+    status: str = field(init=False)
+
+    def __post_init__(self, meta: dict):
+        self.short_name = meta.get('ShortName')
+        self.full_name = meta.get('FullName')
+        self.activities = self._get_activities(meta.get('Activities', {}))
+        self.inn = meta.get('Inn')
+        self.ogrn = meta.get('Ogrn')
+        self.international_id = meta.get('InternationalId')
+        self.opf = meta.get('Opf')
+        self.email = meta.get('Email')
+        self.address = meta.get('Address')
+        self.phone = meta.get('Phone')
+        self.created = str_to_date(meta.get('CreationDate'))
+        self.status = meta.get('Status')
+
+    @staticmethod
+    def _get_activities(data):
+        return [Activity(d) for d in data]
+
+
+@dataclass
+class Activity:
+    meta: InitVar[dict]
+    short_name: str = field(init=False)
+    full_name: str = field(init=False)
+    supervision_division: str = field(init=False)
+
+    def __post_init__(self, meta: dict):
+        self.short_name = meta.get('ShortName')
+        self.full_name = meta.get('FullName')
+        self.supervision_division = (meta.get('SupervisionDevision', {})
+                                     .get('Name'))
+
+
+@dataclass
+class ProfileQuota:
+    meta: InitVar[dict]
+    total: int = field(init=False)
+    used: int = field(init=False)
+    msg_size: int = field(init=False)
+
+    def __post_init__(self, meta: dict):
+        self.total = meta.get('TotalQuota')
+        self.used = meta.get('UsedQuota')
+        self.msg_size = meta.get('MessageSize')
