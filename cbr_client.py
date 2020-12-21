@@ -3,7 +3,6 @@ import logging
 
 from dataclasses import dataclass, field, InitVar, MISSING
 from datetime import datetime
-from enum import Enum
 from uuid import UUID
 
 _BASE_URL = 'https://portal5test.cbr.ru/back/rapi2'
@@ -15,14 +14,23 @@ logger.setLevel('DEBUG')
 
 tasks = {
     '1-ПИ': 'Zadacha_61',
+    '1-PI': 'Zadacha_61',
     '1-ИЦБ': 'Zadacha_98',
+    '1-ICB': 'Zadacha_98',
     '1-АРЕНДА': 'Zadacha_98',
+    '1-ARENDA': 'Zadacha_98',
     '1-ПОЕЗДКИ': 'Zadacha_98',
+    '1-POEZDKI': 'Zadacha_98',
     '1-РОУМИНГ': 'Zadacha_98',
+    '1-ROUMING': 'Zadacha_98',
     '1-ТРАНСПОРТ': 'Zadacha_98',
+    '1-TRANSPORT': 'Zadacha_98',
     '2-ТРАНСПОРТ': 'Zadacha_98',
+    '2-TRANSPORT': 'Zadacha_98',
     '3-ТРАНСПОРТ': 'Zadacha_98',
-    '1-МЕД': 'Zadacha_98'
+    '3-TRANSPORT': 'Zadacha_98',
+    '1-МЕД': 'Zadacha_98',
+    '1-MED': 'Zadacha_98',
 }
 
 
@@ -135,20 +143,6 @@ class Client:
             raise ClientException(str(exc))
 
 
-class Status(Enum):
-    draft = 'draft'
-    sent = 'sent'
-    delivered = 'delivered'
-    error = 'error'
-    processing = 'processing'
-    registered = 'registered'
-    rejected = 'rejected'
-    new = 'new'
-    read = 'read'
-    replied = 'replied'
-    success = 'success'
-
-
 @dataclass
 class Message:
     files: list = field(init=False, default_factory=list)
@@ -160,7 +154,7 @@ class Message:
     text: str = field(init=False, default=None)
     created: datetime = field(init=False, default=None)
     updated: datetime = field(init=False, default=None)
-    status: Status = field(init=False, default=None)
+    status: str = field(init=False, default=None)
     task: str = field(init=False, default=None)
     regnum: str = field(init=False, default=None)
     size: int = field(init=False, default=0)
@@ -172,7 +166,7 @@ class Message:
         self.group_id = str_to_uuid(meta.get('GroupId'))
         self.created = str_to_date(meta.get('CreationDate'))
         self.updated = str_to_date(meta.get('UpdatedDate'))
-        self.status = Status(meta.get('Status'))
+        self.status = meta.get('Status')
         self.regnum = meta.get('RegNumber')
         self.size = meta.get('TotalSize')
         if len(self.files) > 0:
@@ -236,7 +230,7 @@ class Receipt:
     oid: UUID = field(init=False, default=None)
     receive_time: datetime = field(init=False, default=None)
     status_time: datetime = field(init=False, default=None)
-    status: Status = field(init=False, default=None)
+    status: str = field(init=False, default=None)
     message: str = field(init=False, default=None)
     files: list = field(init=False, default_factory=list)
 
@@ -244,7 +238,7 @@ class Receipt:
         self.oid = str_to_uuid(meta['Id'])
         self.receive_time = str_to_date(meta['ReceiveTime'])
         self.status_time = str_to_date(meta['StatusTime'])
-        self.status = Status(meta['Status'])
+        self.status = meta['Status']
         self.message = meta['Message']
         self.files = [
             ReceiptFile(msg_id=self.msg_id, rcpt_id=self.oid, meta=item)
