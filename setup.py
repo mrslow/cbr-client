@@ -7,7 +7,7 @@ dependencies = ['httpx']
 
 setup(
     name='cbr-client',
-    version='0.1.2',
+    version='0.1.3',
     description='Tool for easy working with https://portal5.cbr.ru API',
     long_description=readme,
     long_description_content_type="text/markdown",

@@ -5,7 +5,7 @@ from dataclasses import dataclass, field, InitVar, MISSING
 from datetime import datetime
 from uuid import UUID
 
-_BASE_URL = 'https://portal5test.cbr.ru/back/rapi2'
+_BASE_URL = 'https://portal5.cbr.ru/back/rapi2'
 _CHUNK_SIZE = 1024 * 64
 
 logger = logging.getLogger('cbr-client')
@@ -36,7 +36,6 @@ tasks = {
 
 def str_to_date(date_str):
     if date_str:
-        date_str = date_str.split('.')[0] + 'Z'
         return datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%SZ')
 
 
@@ -50,12 +49,15 @@ class ClientException(Exception):
 
 class Client:
 
-    def __init__(self, login: str, password: str, user_agent: str = None):
+    def __init__(self, *, login: str, password: str, url: str = None,
+                 user_agent: str = None):
         headers = {'Accept': 'application/json'}
         if user_agent:
             headers.update({'User-Agent': user_agent})
+        if not url:
+            url = _BASE_URL
         if all((login, password)):
-            self.client = httpx.Client(base_url=_BASE_URL,
+            self.client = httpx.Client(base_url=url,
                                        headers=headers,
                                        auth=(login, password))
         else:

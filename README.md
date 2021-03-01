@@ -16,7 +16,10 @@ pip install cbr-client
 ```python
 from cbr_client import Client
 
-client = Client(login='test', password='test', user_agent='test app')
+client = Client(url='https://portal5test.cbr.ru/back/rapi2', 
+                login='test', 
+                password='test', 
+                user_agent='test app')
 
 files = [
         ('report.zip.enc', 'encrypted report content'),

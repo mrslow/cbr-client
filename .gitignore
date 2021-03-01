@@ -130,3 +130,7 @@ dmypy.json
 
 # IDE
 .idea/
+
+# custom
+files/
+test_cbr.py
