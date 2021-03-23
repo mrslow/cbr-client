@@ -14,23 +14,14 @@ logger.setLevel('DEBUG')
 
 tasks = {
     '1-ПИ': 'Zadacha_61',
-    '1-PI': 'Zadacha_61',
     '1-ИЦБ': 'Zadacha_98',
-    '1-ICB': 'Zadacha_98',
     '1-АРЕНДА': 'Zadacha_98',
-    '1-ARENDA': 'Zadacha_98',
     '1-ПОЕЗДКИ': 'Zadacha_98',
-    '1-POEZDKI': 'Zadacha_98',
     '1-РОУМИНГ': 'Zadacha_98',
-    '1-ROUMING': 'Zadacha_98',
     '1-ТРАНСПОРТ': 'Zadacha_98',
-    '1-TRANSPORT': 'Zadacha_98',
     '2-ТРАНСПОРТ': 'Zadacha_98',
-    '2-TRANSPORT': 'Zadacha_98',
     '3-ТРАНСПОРТ': 'Zadacha_98',
-    '3-TRANSPORT': 'Zadacha_98',
     '1-МЕД': 'Zadacha_98',
-    '1-MED': 'Zadacha_98',
 }
 
 
@@ -221,8 +212,8 @@ class InboxMessage(Message):
         self.task = meta.get('TaskName')
         self.title = meta.get('Title')
         self.text = meta.get('Text')
-        self.receipts = [Receipt(msg_id=self.oid, meta=rcpt)
-                         for rcpt in meta['Receipts']]
+        rcpts = meta.get('Receipts', [])
+        self.receipts = [Receipt(msg_id=self.oid, meta=rcpt) for rcpt in rcpts]
 
 
 @dataclass
