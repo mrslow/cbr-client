@@ -86,7 +86,7 @@ class Client:
                 ('Content-Length', str(len(chunk))),
                 ('Content-Range', f'bytes {i}-{i+len(chunk)-1}/{f.size}')
             ])
-            self._request('PUT', f.upload_url, headers=headers, data=f.content)
+            self._request('PUT', f.upload_url, headers=headers, data=chunk)
 
     def upload(self, msg):
         for f in msg.files:
