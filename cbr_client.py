@@ -6,7 +6,7 @@ from datetime import datetime
 from uuid import UUID
 
 _BASE_URL = 'https://portal5.cbr.ru/back/rapi2'
-_CHUNK_SIZE = 1024 * 64
+_CHUNK_SIZE = 2**16
 
 logger = logging.getLogger('cbr-client')
 logger.setLevel('DEBUG')
@@ -78,20 +78,27 @@ class Client:
         msg.refill(resp)
         return msg
 
-    def _partial_upload(self, f):
-        for i in range(0, len(f.content), _CHUNK_SIZE):
-            chunk = f.content[i:i + _CHUNK_SIZE]
-            headers = dict([
-                ('Content-Type', 'application/octet-stream'),
-                ('Content-Length', str(len(chunk))),
-                ('Content-Range', f'bytes {i}-{i+len(chunk)-1}/{f.size}')
-            ])
+    def _upload_headers(self, index, offset, total):
+        return dict([
+            ('Content-Type', 'application/octet-stream'),
+            ('Content-Length', str(offset)),
+            ('Content-Range', f'bytes {index}-{index + offset - 1}/{total}')
+        ])
+
+    def _partial_upload(self, f, chunk_size):
+        for i in range(0, len(f.content), chunk_size):
+            chunk = f.content[i:i + chunk_size]
+            headers = self._upload_headers(i, len(chunk), len(f.content))
             self._request('PUT', f.upload_url, headers=headers, data=chunk)
 
-    def upload(self, msg):
+    def upload(self, msg, chunked=False, chunk_size=_CHUNK_SIZE):
         for f in msg.files:
             self._request('POST', f.session_url)
-            self._partial_upload(f)
+            if chunked:
+                self._partial_upload(f, chunk_size)
+            else:
+                hdr = self._upload_headers(0, len(f.content), len(f.content))
+                self._request('PUT', f.upload_url, data=f.content, headers=hdr)
 
     def finalize_message(self, msg):
         self._request('POST', f'/messages/{msg.oid}')
@@ -133,6 +140,7 @@ class Client:
             else:
                 return resp.content
         except httpx.HTTPStatusError as exc:
+            logger.debug(resp.json())
             raise ClientException(str(exc))
 
 

@@ -30,6 +30,8 @@ files = [
 # отправка отчета на портал ЦБ
 msg = client.create_message(files, '1-ПИ')
 client.upload(msg)
+# или опциональная отправка чанками
+# client.upload(msg, chunked=True, chunk_size=2**16)
 client.finalize_message(msg)
 
 # получение квитанций
