@@ -1,0 +1,29 @@
+{
+    "ShortName":"АО \"ТЕСТ\"",
+    "FullName":"  ",
+    "Activities":[
+        {
+            "FullName":"Оператор электронного документооборота",
+            "ShortName":"Оператор ЭДО",
+            "SupervisionDevision":{
+                "Name":"Центр по обработке отчетности КО в ГУ Банка России по ЦФО"
+            }
+        },
+        {
+            "FullName":"Субъекты статистического учета прямых инвестиций",
+            "ShortName":"СС УПИ",
+            "SupervisionDevision":{
+                "Name":"None"
+            }
+        }
+    ],
+    "Inn":"3028016971",
+    "Ogrn":"1034001343048",
+    "InternationalId":"None",
+    "Opf":"Акционерные общества",
+    "Email":"manager@test.ru",
+    "Address":"None",
+    "Phone":"None",
+    "CreationDate":"2021-01-01T09:31:33Z",
+    "Status":"Active"
+}

@@ -1,0 +1,282 @@
+[
+    {
+        "Code":"Zadacha_70",
+        "Name":"Отчётность НПФ, подтвержденная специальными депозитариями",
+        "Description":"при иницировании ЭС от АС ДКО",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_1-33-2",
+        "Name":"Массовая рассылка в соответствии со 115-ФЗ (639-П) Ответ",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_52",
+        "Name":"Поток передачи информации для публикации на официальном сайте Банка России",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_96",
+        "Name":"Получение данных ГБО ФНС России из Банка России",
+        "Description":"В рамках данной задачи направляются данные из ЦБ в ГБО ФНС России",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_45",
+        "Name":"Передача БИК",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_114",
+        "Name":"Извещение о результатах контроля представления формы 0409310 (ИЭС1)",
+        "Description":"Извещение о результатах контроля представления формы 0409310 (ИЭС1)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_61",
+        "Name":"Передача отчетности 1-ПИ операторами ЭДО",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"GroupTask_22",
+        "Name":"Федеральные статистические наблюдения, утвержденные Указанием Банка России от 25.11.2019 № 5328-У",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_1-33",
+        "Name":"Массовая рассылка в соответствии со 115-ФЗ (639-П).",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_140",
+        "Name":"Извещение о результатах контроля информации о ВПОДК и их результатах (ИЭС2)",
+        "Description":"Ответ на предоставление информации о результатах контроля информации о ВПОДК и их результатах (ИЭС2)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_100",
+        "Name":"Выгрузка данных из ППК КГР в ЛК",
+        "Description":"В рамках данной задачи направляются данные из ЦБ в ГБО ФНС России",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_1-28",
+        "Name":"Отправить XBRL",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":true
+    },
+    {
+        "Code":"Zadacha_125",
+        "Name":"Извещение о результатах контроля представления отчетности 1-ФС (СК) (ИЭС1)",
+        "Description":"Ответ на представление статистической отчетности страховых организаций по форме №1 - ФС (СК) в Банк России (ИЭС1)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_1-24-2",
+        "Name":"В формате pdf",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_128",
+        "Name":"Извещение о результатах контроля представления отчетности 1-ФС (НПФ) (ИЭС1)",
+        "Description":"Ответ на представление статистической отчетности по форме №1 - ФС (НПФ) в Банк России  (ИЭС1)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_86",
+        "Name":"Сообщение из системы Банка России. Ответ на сообщение УИО.",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_2-1",
+        "Name":"Ответ на запрос, предписание. Запрос в Банк России. Квитанции из ВП ЕПВВ",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_3-1",
+        "Name":"Запрос, предписание. Ответ на запрос НФО. Квитанции из САДД",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_97",
+        "Name":"Извещение о результатах контроля информации о ВПОДК и их результатах (ИЭС1)",
+        "Description":"Ответ на предоставление информации о результатах контроля информации о ВПОДК и их результатах (ИЭС1)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_98",
+        "Name":"Передача отчетности по формам Федерального статистического наблюдения с использованием ПО операторов ЭДО",
+        "Description":"Взаимообмен по потоку ФСН операторы ЭДО.",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"TemporaryTask_79",
+        "Name":"Поток передачи информации от РВЭЦБ для публикации на официальном сайте Банка России",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_79",
+        "Name":"Поток передачи информации от РВЭЦБ для публикации на официальном сайте Банка России",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_48",
+        "Name":"Запрос Анкетирование",
+        "Description":"Взаимообмен по потоку Анкетирование. Отправка шаблонов анкет из БР.",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_94",
+        "Name":"Расчет и регулирование размера обязательных резервов",
+        "Description":"",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_51",
+        "Name":"Нева. Поток по инициативе НЕВЫ",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_123",
+        "Name":"Извещение о результатах контроля представления формы 0409310 (ИЭС2)",
+        "Description":"Извещение о результатах контроля представления формы 0409310 (ИЭС2)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_85",
+        "Name":"Унифицированный обмен",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_147",
+        "Name":"Представление отчетности в соответствии с Указанием Банка России от 23 июня 2020 г. № 5486-У",
+        "Description":"Поток представление отчетности о движении денежных средств резидента по счету (вкладу) за пределами РФ в ФПС Отчетность",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_81",
+        "Name":"Ответ на сбор файлов номеров банкнот",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_78",
+        "Name":"Извещения и уведомления по депозитным и кредитным операциям",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_20",
+        "Name":"Активы КО (обратный поток)",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_126",
+        "Name":"Извещение о результатах контроля представления отчетности 1-ФС (СК) (ИЭС2)",
+        "Description":"Ответ на представление статистической отчетности страховых организаций по форме №1 - ФС (СК) в Банк России (ИЭС2)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_73",
+        "Name":"Электронные описи упаковок (ЭОП) (Обратный поток)",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_1-32",
+        "Name":"Получение отчетности из Клиентского ПО через SOAP-сервис",
+        "Description":"None",
+        "AllowAspera":false,
+        "Direction":"outbox",
+        "AllowLinkedMessages":false
+    },
+    {
+        "Code":"Zadacha_129",
+        "Name":"Извещение о результатах контроля представления отчетности 1-ФС (НПФ) (ИЭС2)",
+        "Description":"Ответ на представление статистической отчетности по форме №1 - ФС (НПФ) в Банк России (ИЭС2)",
+        "AllowAspera":false,
+        "Direction":"inbox",
+        "AllowLinkedMessages":false
+    }
+]
