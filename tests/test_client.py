@@ -26,7 +26,7 @@ def test_partial_upload_no_content(client, ):
 
 
 def test_request_exception(httpx_mock, client):
-    def raise_timeout(request, ext: dict):
+    def raise_timeout(request, extensions: dict):
         raise httpx.ReadTimeout('Test timeout error', request=request)
 
     httpx_mock.add_callback(raise_timeout)

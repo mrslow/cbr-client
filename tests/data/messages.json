@@ -30,9 +30,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/89f43940-5a3f-4343-a550-d0f0d2152ff5/files/e9a30113-6b20-45c8-a923-69f448757655/download"
+                        "Path":"back/rapi2/messages/89f43940-5a3f-4343-a550-d0f0d2152ff5/files/e9a30113-6b20-45c8-a923-69f448757655/download"
                     }
                 ]
             },
@@ -46,9 +46,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/89f43940-5a3f-4343-a550-d0f0d2152ff5/files/dd182dfa-0509-476a-bfe9-b3cd580aa001/download"
+                        "Path":"back/rapi2/messages/89f43940-5a3f-4343-a550-d0f0d2152ff5/files/dd182dfa-0509-476a-bfe9-b3cd580aa001/download"
                     }
                 ]
             },
@@ -62,9 +62,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru/",
                         "Port":81,
-                        "Path":"rapi2/messages/89f43940-5a3f-4343-a550-d0f0d2152ff5/files/ea38fbd4-77e3-4511-ae14-e70f83d35d36/download"
+                        "Path":"back/rapi2/messages/89f43940-5a3f-4343-a550-d0f0d2152ff5/files/ea38fbd4-77e3-4511-ae14-e70f83d35d36/download"
                     }
                 ]
             }
@@ -102,9 +102,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/215dadd9-b7e6-45fc-aaaa-be994fd04c64/files/7c5c6f86-40a4-4450-b97e-7bd20d993ca4/download"
+                        "Path":"back/rapi2/messages/215dadd9-b7e6-45fc-aaaa-be994fd04c64/files/7c5c6f86-40a4-4450-b97e-7bd20d993ca4/download"
                     }
                 ]
             },
@@ -118,9 +118,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/215dadd9-b7e6-45fc-aaaa-be994fd04c64/files/b64e2751-f3df-4554-9021-972eacb2222f/download"
+                        "Path":"back/rapi2/messages/215dadd9-b7e6-45fc-aaaa-be994fd04c64/files/b64e2751-f3df-4554-9021-972eacb2222f/download"
                     }
                 ]
             },
@@ -134,9 +134,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/215dadd9-b7e6-45fc-aaaa-be994fd04c64/files/57ab9caf-6b58-472c-a4e3-f692488317d5/download"
+                        "Path":"back/rapi2/messages/215dadd9-b7e6-45fc-aaaa-be994fd04c64/files/57ab9caf-6b58-472c-a4e3-f692488317d5/download"
                     }
                 ]
             }
@@ -372,9 +372,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/edd388b9-768a-427a-aa5e-18ef9f6dc83d/files/21ace5f4-aa8a-4b8b-a3e5-81c2e91ecee3/download"
+                        "Path":"back/rapi2/messages/edd388b9-768a-427a-aa5e-18ef9f6dc83d/files/21ace5f4-aa8a-4b8b-a3e5-81c2e91ecee3/download"
                     }
                 ]
             },
@@ -388,9 +388,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/edd388b9-768a-427a-aa5e-18ef9f6dc83d/files/948936a5-ad55-4575-809a-b870500cc374/download"
+                        "Path":"back/rapi2/messages/edd388b9-768a-427a-aa5e-18ef9f6dc83d/files/948936a5-ad55-4575-809a-b870500cc374/download"
                     }
                 ]
             },
@@ -404,9 +404,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/edd388b9-768a-427a-aa5e-18ef9f6dc83d/files/97474d14-6f5d-41ff-aaa8-faec27e85d97/download"
+                        "Path":"back/rapi2/messages/edd388b9-768a-427a-aa5e-18ef9f6dc83d/files/97474d14-6f5d-41ff-aaa8-faec27e85d97/download"
                     }
                 ]
             }
@@ -642,9 +642,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/b556db3b-a831-4fc5-83b8-51e600bf2bf7/files/555d3688-853b-45da-9f85-2618f1a1e565/download"
+                        "Path":"back/rapi2/messages/b556db3b-a831-4fc5-83b8-51e600bf2bf7/files/555d3688-853b-45da-9f85-2618f1a1e565/download"
                     }
                 ]
             },
@@ -658,9 +658,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/b556db3b-a831-4fc5-83b8-51e600bf2bf7/files/ef4cfb1a-78af-49bd-b1f6-b851dad1259e/download"
+                        "Path":"back/rapi2/messages/b556db3b-a831-4fc5-83b8-51e600bf2bf7/files/ef4cfb1a-78af-49bd-b1f6-b851dad1259e/download"
                     }
                 ]
             },
@@ -674,9 +674,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/b556db3b-a831-4fc5-83b8-51e600bf2bf7/files/3ebba7e5-9cd6-420b-be78-ee151cc4dfee/download"
+                        "Path":"back/rapi2/messages/b556db3b-a831-4fc5-83b8-51e600bf2bf7/files/3ebba7e5-9cd6-420b-be78-ee151cc4dfee/download"
                     }
                 ]
             }
@@ -912,9 +912,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/512854e9-e09f-4aeb-968b-a7e2e3887b0c/files/93349c69-3ed1-4a7a-a0ff-ba137755c916/download"
+                        "Path":"back/rapi2/messages/512854e9-e09f-4aeb-968b-a7e2e3887b0c/files/93349c69-3ed1-4a7a-a0ff-ba137755c916/download"
                     }
                 ]
             },
@@ -928,9 +928,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/512854e9-e09f-4aeb-968b-a7e2e3887b0c/files/cd7af62c-52e5-483f-947a-efec39c52ae8/download"
+                        "Path":"back/rapi2/messages/512854e9-e09f-4aeb-968b-a7e2e3887b0c/files/cd7af62c-52e5-483f-947a-efec39c52ae8/download"
                     }
                 ]
             },
@@ -944,9 +944,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/512854e9-e09f-4aeb-968b-a7e2e3887b0c/files/80180c5b-988f-4512-af9d-fa46b9b67ea4/download"
+                        "Path":"back/rapi2/messages/512854e9-e09f-4aeb-968b-a7e2e3887b0c/files/80180c5b-988f-4512-af9d-fa46b9b67ea4/download"
                     }
                 ]
             }
@@ -1182,9 +1182,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/97ee0772-f045-44b4-b156-2cdcd1cdb564/files/f07ac672-73ca-4c6a-976f-38592120ab96/download"
+                        "Path":"back/rapi2/messages/97ee0772-f045-44b4-b156-2cdcd1cdb564/files/f07ac672-73ca-4c6a-976f-38592120ab96/download"
                     }
                 ]
             },
@@ -1198,9 +1198,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/97ee0772-f045-44b4-b156-2cdcd1cdb564/files/5ecb6463-5054-465a-b85d-62036f690849/download"
+                        "Path":"back/rapi2/messages/97ee0772-f045-44b4-b156-2cdcd1cdb564/files/5ecb6463-5054-465a-b85d-62036f690849/download"
                     }
                 ]
             },
@@ -1214,9 +1214,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/97ee0772-f045-44b4-b156-2cdcd1cdb564/files/45e3175c-ae23-40ac-a4d4-6f9ee0f9013c/download"
+                        "Path":"back/rapi2/messages/97ee0772-f045-44b4-b156-2cdcd1cdb564/files/45e3175c-ae23-40ac-a4d4-6f9ee0f9013c/download"
                     }
                 ]
             }
@@ -1452,9 +1452,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/2efdc365-c5fa-4fd7-a5a0-965cf599e033/files/49870139-283e-4994-bc00-1c1a08830bf9/download"
+                        "Path":"back/rapi2/messages/2efdc365-c5fa-4fd7-a5a0-965cf599e033/files/49870139-283e-4994-bc00-1c1a08830bf9/download"
                     }
                 ]
             },
@@ -1468,9 +1468,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/2efdc365-c5fa-4fd7-a5a0-965cf599e033/files/359e3049-0a78-4024-b43e-869f24eea5e3/download"
+                        "Path":"back/rapi2/messages/2efdc365-c5fa-4fd7-a5a0-965cf599e033/files/359e3049-0a78-4024-b43e-869f24eea5e3/download"
                     }
                 ]
             },
@@ -1484,9 +1484,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/2efdc365-c5fa-4fd7-a5a0-965cf599e033/files/b6eae4cb-e816-4ee2-94f4-e279f38c41d3/download"
+                        "Path":"back/rapi2/messages/2efdc365-c5fa-4fd7-a5a0-965cf599e033/files/b6eae4cb-e816-4ee2-94f4-e279f38c41d3/download"
                     }
                 ]
             }
@@ -1722,9 +1722,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/63f73267-a657-41de-bdce-b38761057147/files/388e50c2-6286-4b68-99cb-851db3d6e693/download"
+                        "Path":"back/rapi2/messages/63f73267-a657-41de-bdce-b38761057147/files/388e50c2-6286-4b68-99cb-851db3d6e693/download"
                     }
                 ]
             },
@@ -1738,9 +1738,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/63f73267-a657-41de-bdce-b38761057147/files/c42affdb-1b54-434f-b644-98445d5c8c46/download"
+                        "Path":"back/rapi2/messages/63f73267-a657-41de-bdce-b38761057147/files/c42affdb-1b54-434f-b644-98445d5c8c46/download"
                     }
                 ]
             },
@@ -1754,9 +1754,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/63f73267-a657-41de-bdce-b38761057147/files/c4cea9b2-a5b6-4994-9abb-a3bf16d52eb0/download"
+                        "Path":"back/rapi2/messages/63f73267-a657-41de-bdce-b38761057147/files/c4cea9b2-a5b6-4994-9abb-a3bf16d52eb0/download"
                     }
                 ]
             }
@@ -1992,9 +1992,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/4b0fad1e-6b59-4550-bd98-0e6cfd530f80/files/c1cfe9bb-e403-4f3e-9369-1609f5278633/download"
+                        "Path":"back/rapi2/messages/4b0fad1e-6b59-4550-bd98-0e6cfd530f80/files/c1cfe9bb-e403-4f3e-9369-1609f5278633/download"
                     }
                 ]
             },
@@ -2008,9 +2008,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/4b0fad1e-6b59-4550-bd98-0e6cfd530f80/files/0b5b6d9a-ea0c-424d-b9e2-2fc9d8d3a5fb/download"
+                        "Path":"back/rapi2/messages/4b0fad1e-6b59-4550-bd98-0e6cfd530f80/files/0b5b6d9a-ea0c-424d-b9e2-2fc9d8d3a5fb/download"
                     }
                 ]
             },
@@ -2024,9 +2024,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/4b0fad1e-6b59-4550-bd98-0e6cfd530f80/files/563d7392-4491-49fc-b4d2-b51b81d6f17a/download"
+                        "Path":"back/rapi2/messages/4b0fad1e-6b59-4550-bd98-0e6cfd530f80/files/563d7392-4491-49fc-b4d2-b51b81d6f17a/download"
                     }
                 ]
             }
@@ -2262,9 +2262,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/d5c8ac63-2442-460d-8c85-cb532d36d8cd/files/94656c68-0cc2-4b3c-abe9-14593274b9db/download"
+                        "Path":"back/rapi2/messages/d5c8ac63-2442-460d-8c85-cb532d36d8cd/files/94656c68-0cc2-4b3c-abe9-14593274b9db/download"
                     }
                 ]
             },
@@ -2278,9 +2278,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/d5c8ac63-2442-460d-8c85-cb532d36d8cd/files/1e1032cf-2217-40da-8a8f-68479ba74c67/download"
+                        "Path":"back/rapi2/messages/d5c8ac63-2442-460d-8c85-cb532d36d8cd/files/1e1032cf-2217-40da-8a8f-68479ba74c67/download"
                     }
                 ]
             },
@@ -2294,9 +2294,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/d5c8ac63-2442-460d-8c85-cb532d36d8cd/files/5bb21dae-4a01-45e6-8e4f-9bfaaf13eb48/download"
+                        "Path":"back/rapi2/messages/d5c8ac63-2442-460d-8c85-cb532d36d8cd/files/5bb21dae-4a01-45e6-8e4f-9bfaaf13eb48/download"
                     }
                 ]
             }
@@ -2532,9 +2532,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/files/f711b0ec-8078-4081-9473-4792e97a57e3/download"
+                        "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/files/f711b0ec-8078-4081-9473-4792e97a57e3/download"
                     }
                 ]
             },
@@ -2548,9 +2548,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/files/cedccee3-f81b-4c6c-9e61-712f1b9a3e1d/download"
+                        "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/files/cedccee3-f81b-4c6c-9e61-712f1b9a3e1d/download"
                     }
                 ]
             },
@@ -2564,9 +2564,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/files/a5ef2534-78b0-4527-aa91-84ad6f73b80f/download"
+                        "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/files/a5ef2534-78b0-4527-aa91-84ad6f73b80f/download"
                     }
                 ]
             }
@@ -2589,9 +2589,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/acdf108c-5c84-47bd-9e62-17cfa0fe4f94/files/57eff5eb-6663-4944-a270-24fd74070259/download"
+                                "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/acdf108c-5c84-47bd-9e62-17cfa0fe4f94/files/57eff5eb-6663-4944-a270-24fd74070259/download"
                             }
                         ]
                     },
@@ -2605,9 +2605,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/acdf108c-5c84-47bd-9e62-17cfa0fe4f94/files/4ec50e25-8a19-4c1f-b214-a8265d8a2bf5/download"
+                                "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/acdf108c-5c84-47bd-9e62-17cfa0fe4f94/files/4ec50e25-8a19-4c1f-b214-a8265d8a2bf5/download"
                             }
                         ]
                     }
@@ -2703,9 +2703,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/f6a5439b-8bf9-47ce-aacc-9eb47eb37185/download"
+                                "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/f6a5439b-8bf9-47ce-aacc-9eb47eb37185/download"
                             }
                         ]
                     },
@@ -2719,9 +2719,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/ce6a2c01-253f-4f95-9157-cca808d8ba64/download"
+                                "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/ce6a2c01-253f-4f95-9157-cca808d8ba64/download"
                             }
                         ]
                     },
@@ -2735,9 +2735,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/28926e1b-e1db-41ba-b793-cf796f348a67/download"
+                                "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/28926e1b-e1db-41ba-b793-cf796f348a67/download"
                             }
                         ]
                     },
@@ -2751,9 +2751,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/352f5662-c6a5-44b1-9030-d0ac9d52cfee/download"
+                                "Path":"back/rapi2/messages/8a554b6f-8253-40fb-a72c-fc96113691d6/receipts/4f8a5852-4f9d-4f29-ae11-ea13526577e3/files/352f5662-c6a5-44b1-9030-d0ac9d52cfee/download"
                             }
                         ]
                     }
@@ -2802,9 +2802,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/39954213-1e75-434a-9311-39c25fa61fa3/files/7dbaf0f8-bbff-4070-a258-b4f51e8b253b/download"
+                        "Path":"back/rapi2/messages/39954213-1e75-434a-9311-39c25fa61fa3/files/7dbaf0f8-bbff-4070-a258-b4f51e8b253b/download"
                     }
                 ]
             },
@@ -2818,9 +2818,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/39954213-1e75-434a-9311-39c25fa61fa3/files/ffa7ecda-63e1-4893-9355-b825f878e95e/download"
+                        "Path":"back/rapi2/messages/39954213-1e75-434a-9311-39c25fa61fa3/files/ffa7ecda-63e1-4893-9355-b825f878e95e/download"
                     }
                 ]
             },
@@ -2834,9 +2834,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/39954213-1e75-434a-9311-39c25fa61fa3/files/415e2a3a-3eec-48e5-a2f0-e14af29850aa/download"
+                        "Path":"back/rapi2/messages/39954213-1e75-434a-9311-39c25fa61fa3/files/415e2a3a-3eec-48e5-a2f0-e14af29850aa/download"
                     }
                 ]
             }
@@ -3072,9 +3072,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/5ad85b01-bfd3-4ff8-acfe-7219c3b1f1f0/files/04186e5a-8c0b-4763-95ab-1d6a76485206/download"
+                        "Path":"back/rapi2/messages/5ad85b01-bfd3-4ff8-acfe-7219c3b1f1f0/files/04186e5a-8c0b-4763-95ab-1d6a76485206/download"
                     }
                 ]
             },
@@ -3088,9 +3088,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/5ad85b01-bfd3-4ff8-acfe-7219c3b1f1f0/files/e8cf28aa-bf82-4bea-89e7-2cec81fd09c9/download"
+                        "Path":"back/rapi2/messages/5ad85b01-bfd3-4ff8-acfe-7219c3b1f1f0/files/e8cf28aa-bf82-4bea-89e7-2cec81fd09c9/download"
                     }
                 ]
             },
@@ -3104,9 +3104,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/5ad85b01-bfd3-4ff8-acfe-7219c3b1f1f0/files/64eba095-5672-460b-80e7-3723350d69cb/download"
+                        "Path":"back/rapi2/messages/5ad85b01-bfd3-4ff8-acfe-7219c3b1f1f0/files/64eba095-5672-460b-80e7-3723350d69cb/download"
                     }
                 ]
             }
@@ -3342,9 +3342,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/3b145627-5942-42d7-a6b7-dcaa11a6afc1/files/9ac61eea-b39e-4244-a874-090685c5767d/download"
+                        "Path":"back/rapi2/messages/3b145627-5942-42d7-a6b7-dcaa11a6afc1/files/9ac61eea-b39e-4244-a874-090685c5767d/download"
                     }
                 ]
             },
@@ -3358,9 +3358,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/3b145627-5942-42d7-a6b7-dcaa11a6afc1/files/35febb04-3bf2-456d-9650-b1f01e6e16ed/download"
+                        "Path":"back/rapi2/messages/3b145627-5942-42d7-a6b7-dcaa11a6afc1/files/35febb04-3bf2-456d-9650-b1f01e6e16ed/download"
                     }
                 ]
             },
@@ -3374,9 +3374,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/3b145627-5942-42d7-a6b7-dcaa11a6afc1/files/0bfd0501-ac0a-440e-aadd-df440153c7c8/download"
+                        "Path":"back/rapi2/messages/3b145627-5942-42d7-a6b7-dcaa11a6afc1/files/0bfd0501-ac0a-440e-aadd-df440153c7c8/download"
                     }
                 ]
             }
@@ -3612,9 +3612,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/626dd874-050b-460f-9639-8beeac6a93af/files/be0812f9-4d3a-4daa-a6f1-940e129f4b02/download"
+                        "Path":"back/rapi2/messages/626dd874-050b-460f-9639-8beeac6a93af/files/be0812f9-4d3a-4daa-a6f1-940e129f4b02/download"
                     }
                 ]
             },
@@ -3628,9 +3628,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/626dd874-050b-460f-9639-8beeac6a93af/files/0cd528eb-815d-4751-a60a-dffba1372cc6/download"
+                        "Path":"back/rapi2/messages/626dd874-050b-460f-9639-8beeac6a93af/files/0cd528eb-815d-4751-a60a-dffba1372cc6/download"
                     }
                 ]
             },
@@ -3644,9 +3644,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/626dd874-050b-460f-9639-8beeac6a93af/files/c5d7018e-04ab-4c99-bf26-e124d55c8d2f/download"
+                        "Path":"back/rapi2/messages/626dd874-050b-460f-9639-8beeac6a93af/files/c5d7018e-04ab-4c99-bf26-e124d55c8d2f/download"
                     }
                 ]
             }
@@ -3882,9 +3882,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/files/e161fc24-4d50-47bf-9408-58a9f8067983/download"
+                        "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/files/e161fc24-4d50-47bf-9408-58a9f8067983/download"
                     }
                 ]
             },
@@ -3898,9 +3898,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/files/c6a88936-4078-49ce-a668-a323021a76d4/download"
+                        "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/files/c6a88936-4078-49ce-a668-a323021a76d4/download"
                     }
                 ]
             },
@@ -3914,9 +3914,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/files/b8f16081-1aef-44e5-afd8-be19d7e66364/download"
+                        "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/files/b8f16081-1aef-44e5-afd8-be19d7e66364/download"
                     }
                 ]
             }
@@ -3939,9 +3939,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/29299b64-7d48-48d1-8fe4-1b8b467bba03/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/29299b64-7d48-48d1-8fe4-1b8b467bba03/download"
                             }
                         ]
                     },
@@ -3955,9 +3955,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/a1b7cc87-823c-4c83-9ae5-49a742c6799e/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/a1b7cc87-823c-4c83-9ae5-49a742c6799e/download"
                             }
                         ]
                     },
@@ -3971,9 +3971,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/b18ebf03-e7e7-4096-843f-8e5dbb559210/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/b18ebf03-e7e7-4096-843f-8e5dbb559210/download"
                             }
                         ]
                     },
@@ -3987,9 +3987,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/d80c9e37-4bbf-4319-ba12-c90a27050608/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/11fd4873-d23a-42cd-afe9-0a6cb475210f/files/d80c9e37-4bbf-4319-ba12-c90a27050608/download"
                             }
                         ]
                     }
@@ -4012,9 +4012,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/f83f4c97-9ad8-4550-8b8a-2bbd6771ae8a/files/c9cc62e2-9692-46ec-810f-32b8a0dd30ab/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/f83f4c97-9ad8-4550-8b8a-2bbd6771ae8a/files/c9cc62e2-9692-46ec-810f-32b8a0dd30ab/download"
                             }
                         ]
                     },
@@ -4028,9 +4028,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/f83f4c97-9ad8-4550-8b8a-2bbd6771ae8a/files/f0eda391-f252-4afe-8e27-68716b9c64a2/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/f83f4c97-9ad8-4550-8b8a-2bbd6771ae8a/files/f0eda391-f252-4afe-8e27-68716b9c64a2/download"
                             }
                         ]
                     }
@@ -4053,9 +4053,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/ede7533b-6289-4ef0-a8f5-312159097c34/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/ede7533b-6289-4ef0-a8f5-312159097c34/download"
                             }
                         ]
                     },
@@ -4069,9 +4069,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/9eb7fbc9-73dc-427f-853f-475b53f7777d/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/9eb7fbc9-73dc-427f-853f-475b53f7777d/download"
                             }
                         ]
                     },
@@ -4085,9 +4085,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/4e892c83-661b-403b-a728-840a61fe1849/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/4e892c83-661b-403b-a728-840a61fe1849/download"
                             }
                         ]
                     },
@@ -4101,9 +4101,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/7bd6a640-f73f-4e69-97ed-930f9e708b07/download"
+                                "Path":"back/rapi2/messages/c237d983-388f-4b74-9bcf-0bc7444b467c/receipts/98878beb-7cdb-41b6-9bb9-39f89bae5266/files/7bd6a640-f73f-4e69-97ed-930f9e708b07/download"
                             }
                         ]
                     }
@@ -4152,9 +4152,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/files/99c052ff-e281-4595-9030-75fab51aec31/download"
+                        "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/files/99c052ff-e281-4595-9030-75fab51aec31/download"
                     }
                 ]
             },
@@ -4168,9 +4168,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/files/c1a74bdd-1055-408f-9207-790d030dfd69/download"
+                        "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/files/c1a74bdd-1055-408f-9207-790d030dfd69/download"
                     }
                 ]
             },
@@ -4184,9 +4184,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/files/458e11bb-33a9-4a8d-a259-f5a74e873179/download"
+                        "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/files/458e11bb-33a9-4a8d-a259-f5a74e873179/download"
                     }
                 ]
             }
@@ -4219,9 +4219,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/52cf0310-ae35-4540-97d5-531e021bf2a0/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/52cf0310-ae35-4540-97d5-531e021bf2a0/download"
                             }
                         ]
                     },
@@ -4235,9 +4235,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/9a1e34e1-087b-4e10-86bd-635295fb23f3/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/9a1e34e1-087b-4e10-86bd-635295fb23f3/download"
                             }
                         ]
                     },
@@ -4251,9 +4251,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/6d616a1a-107f-43fc-be1e-6a2845b43ef5/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/6d616a1a-107f-43fc-be1e-6a2845b43ef5/download"
                             }
                         ]
                     },
@@ -4267,9 +4267,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/2d654278-19e1-4a8a-af2f-f3255a1090f2/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/73dd3ccf-436f-42ca-aa72-595837486d3d/files/2d654278-19e1-4a8a-af2f-f3255a1090f2/download"
                             }
                         ]
                     }
@@ -4292,9 +4292,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/bd0cdb08-42f9-4175-a93e-7480a8827d72/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/bd0cdb08-42f9-4175-a93e-7480a8827d72/download"
                             }
                         ]
                     },
@@ -4308,9 +4308,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/576322ec-97ff-42f6-b3fa-8d5829402b4a/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/576322ec-97ff-42f6-b3fa-8d5829402b4a/download"
                             }
                         ]
                     },
@@ -4324,9 +4324,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/440e4078-8a0c-4c0e-a1f1-acefd6370782/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/440e4078-8a0c-4c0e-a1f1-acefd6370782/download"
                             }
                         ]
                     },
@@ -4340,9 +4340,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/939aa077-2aa2-4d9d-af1f-c900c07b24c1/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/b76d7bbe-ed66-42aa-a854-9edd84ac7c29/files/939aa077-2aa2-4d9d-af1f-c900c07b24c1/download"
                             }
                         ]
                     }
@@ -4365,9 +4365,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/0730cce9-42a6-4e21-9e21-acaf8596e7fe/files/fab99250-5ff9-4d78-b156-2799f3ba610c/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/0730cce9-42a6-4e21-9e21-acaf8596e7fe/files/fab99250-5ff9-4d78-b156-2799f3ba610c/download"
                             }
                         ]
                     },
@@ -4381,9 +4381,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/0730cce9-42a6-4e21-9e21-acaf8596e7fe/files/4ce613bb-b122-4e63-bfef-3a8f7995a230/download"
+                                "Path":"back/rapi2/messages/b35f7d33-14ac-45ef-9927-dc3c0a2dbada/receipts/0730cce9-42a6-4e21-9e21-acaf8596e7fe/files/4ce613bb-b122-4e63-bfef-3a8f7995a230/download"
                             }
                         ]
                     }
@@ -4422,9 +4422,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/files/46e4f4a4-c8c0-4de3-8448-2df9fd05c198/download"
+                        "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/files/46e4f4a4-c8c0-4de3-8448-2df9fd05c198/download"
                     }
                 ]
             },
@@ -4438,9 +4438,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/files/90e7674d-32d5-4b4d-a7a3-d07f880b332e/download"
+                        "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/files/90e7674d-32d5-4b4d-a7a3-d07f880b332e/download"
                     }
                 ]
             },
@@ -4454,9 +4454,9 @@
                 "RepositoryInfo":[
                     {
                         "RepositoryType":"http",
-                        "Host":"https://portal5test.cbr.ru/back",
+                        "Host":"https://portal5test.cbr.ru",
                         "Port":81,
-                        "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/files/7b7d980d-d318-4ceb-b1f5-da73f3315a08/download"
+                        "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/files/7b7d980d-d318-4ceb-b1f5-da73f3315a08/download"
                     }
                 ]
             }
@@ -4479,9 +4479,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/4a082590-ec23-4bd1-bf7e-599b08a10580/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/4a082590-ec23-4bd1-bf7e-599b08a10580/download"
                             }
                         ]
                     },
@@ -4495,9 +4495,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/583d196b-d49b-4a8e-af18-7e263d17aaa2/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/583d196b-d49b-4a8e-af18-7e263d17aaa2/download"
                             }
                         ]
                     },
@@ -4511,9 +4511,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/ede7db45-07cc-4093-af20-92c4e5c07c80/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/ede7db45-07cc-4093-af20-92c4e5c07c80/download"
                             }
                         ]
                     },
@@ -4527,9 +4527,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/cf213093-6ae9-4512-b3d1-b624f0350807/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/f4ef725d-abad-4302-8384-093bf608e27f/files/cf213093-6ae9-4512-b3d1-b624f0350807/download"
                             }
                         ]
                     }
@@ -4552,9 +4552,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/8f1b0a43-2128-4d32-8754-5a4bf14f73d9/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/8f1b0a43-2128-4d32-8754-5a4bf14f73d9/download"
                             }
                         ]
                     },
@@ -4568,9 +4568,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/c15d0054-ae6c-47e8-a79e-6aa1b8c43d23/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/c15d0054-ae6c-47e8-a79e-6aa1b8c43d23/download"
                             }
                         ]
                     },
@@ -4584,9 +4584,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/2bbbd114-3c58-424c-bbdb-ab2e98be1a6e/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/2bbbd114-3c58-424c-bbdb-ab2e98be1a6e/download"
                             }
                         ]
                     },
@@ -4600,9 +4600,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/344b6a1f-4c24-46e5-be83-bf46fb5854f0/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/c04dae0f-7bc0-4bf1-b02a-624a3f7135bb/files/344b6a1f-4c24-46e5-be83-bf46fb5854f0/download"
                             }
                         ]
                     }
@@ -4635,9 +4635,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/d92d4879-8d63-4aa5-8aa2-a417fa2f1557/files/632866fb-4054-403f-b914-17e1f10bddbb/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/d92d4879-8d63-4aa5-8aa2-a417fa2f1557/files/632866fb-4054-403f-b914-17e1f10bddbb/download"
                             }
                         ]
                     },
@@ -4651,9 +4651,9 @@
                         "RepositoryInfo":[
                             {
                                 "RepositoryType":"Http",
-                                "Host":"https://portal5test.cbr.ru/back",
+                                "Host":"https://portal5test.cbr.ru",
                                 "Port":81,
-                                "Path":"rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/d92d4879-8d63-4aa5-8aa2-a417fa2f1557/files/630485cb-7a67-470f-94c4-c9ea0eda03a8/download"
+                                "Path":"back/rapi2/messages/fb81f810-ff47-4eea-8a97-18c666b94881/receipts/d92d4879-8d63-4aa5-8aa2-a417fa2f1557/files/630485cb-7a67-470f-94c4-c9ea0eda03a8/download"
                             }
                         ]
                     }

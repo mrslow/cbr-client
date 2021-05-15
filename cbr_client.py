@@ -47,6 +47,7 @@ class Client:
             headers.update({'User-Agent': user_agent})
         if not url:
             url = _BASE_URL
+        self.prefix = '/back/rapi2'
         if all((login, password)):
             self.client = httpx.Client(base_url=url,
                                        headers=headers,
@@ -106,6 +107,8 @@ class Client:
         return resp
 
     def _request(self, method, url, **kwargs):
+        if not url.startswith(self.prefix):
+            url = self.prefix + url
         try:
             resp = self.client.request(method, url, **kwargs)
             logger.debug(f'{method} {url} {resp.status_code}')
@@ -124,27 +127,27 @@ class Client:
             raise ClientException(**err.dict())
 
     def get_tasks(self):
-        resp = self._request('GET', '/back/rapi2/tasks')
+        resp = self._request('GET', '/tasks')
         return [Task(**item) for item in resp]
 
     def get_profile(self):
-        resp = self._request('GET', '/back/rapi2/profile')
+        resp = self._request('GET', '/profile')
         return Profile(**resp)
 
     def get_profile_quota(self):
-        resp = self._request('GET', '/back/rapi2/profile/quota')
+        resp = self._request('GET', '/profile/quota')
         return ProfileQuota(**resp)
 
     def get_dictionaries(self):
-        resp = self._request('GET', '/back/rapi2/dictionaries')
+        resp = self._request('GET', '/dictionaries')
         return [Dictionary(**dictionary) for dictionary in resp]
 
     def get_dictionary(self, oid):
-        return self._request('GET', f'/back/rapi2/dictionaries/{oid}')
+        return self._request('GET', f'/dictionaries/{oid}')
 
     def create_message(self, files, form, title=None, text=None):
         payload = self._set_payload(form, title, text, files)
-        resp = self._request('POST', '/back/rapi2/messages', json=payload)
+        resp = self._request('POST', '/messages', json=payload)
         json = self._update_json(resp, files)
         return Message(**json)
 
@@ -159,11 +162,10 @@ class Client:
         return File(**resp)
 
     def finalize_message(self, msg):
-        return self._request('POST', f'/back/rapi2/messages/{msg.oid}')
+        return self._request('POST', f'/messages/{msg.oid}')
 
     def get_receipts(self, msg_id):
-        receipts = self._request('GET',
-                                 f'/back/rapi2/messages/{msg_id}/receipts')
+        receipts = self._request('GET', f'/messages/{msg_id}/receipts')
         return [Receipt(**meta) for meta in receipts]
 
     def download(self, f):
@@ -182,11 +184,11 @@ class Client:
             params['Type'] = msg_type
         if status:
             params['Status'] = status
-        messages = self._request('GET', '/back/rapi2/messages', params=params)
+        messages = self._request('GET', '/messages', params=params)
         return [Message(**msg) for msg in messages]
 
     def delete_message(self, msg_id):
-        return self._request('DELETE', f'/back/rapi2/messages/{msg_id}')
+        return self._request('DELETE', f'/messages/{msg_id}')
 
 
 class ReducedRepresentation:
@@ -218,7 +220,8 @@ class File(ReducedRepresentation, BaseModel):
 
     @property
     def upload_url(self):
-        return f'/back/{self.repository[0].path}'.rsplit('/', 1)[0]
+        path = self.repository[0].path.rsplit('/', 1)[0]
+        return path if path.startswith('/') else f'/{path}'
 
     @property
     def session_url(self):
