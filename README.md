@@ -18,12 +18,20 @@ pip install cbr-client
 
 ## Использование
 ```python
+# необходимо запускать python -m asyncio
 from cbr_client import Client
 
-client = Client(url='https://portal5test.cbr.ru/back/rapi2', 
-                login='test', 
-                password='test', 
-                user_agent='test app')
+conn_params = dict(
+    url='https://portal5test.cbr.ru/back/rapi2',
+    login='test',
+    password='test',
+    user_agent='test app'
+)
+
+client = Client(**conn_params)
+# или через контекстный менеджер
+# async with Client(**conn_params) as client:
+#     ...
 
 files = [
         ('report.zip.enc', 'encrypted report content'),
@@ -33,57 +41,60 @@ files = [
 
 # отправка отчета на портал ЦБ
 # создание сообщения
-msg = client.create_message(files, '1-ПИ')
+msg = await client.create_message(files, '1-ПИ')
 # загрузка файлов
 for f in msg.files:
-    client.upload(f)
+    await client.upload(f)
 # или опциональная загрузка чанками
 for f in msg.files:
-    client.upload(f, chunked=True, chunk_size=2**16)
+    await client.upload(f, chunked=True, chunk_size=2**16)
 # финализация (закрытие сессии)
-client.finalize_message(msg)
+await client.finalize_message(msg)
 
 # получение квитанций
-receipts = client.get_receipts(msg_id=msg.oid)
+receipts =await client.get_receipts(msg_id=msg.oid)
 for rcpt in receipts:
     # получение файла из хранилища
     for f in rcpt.files:
         # сохраняется в f.content
-        client.download(f)
+        await client.download(f)
 
 # получение сообщений по типу формы
-messages = client.get_messages(form='1-ПИ')
+messages = await client.get_messages(form='1-ПИ')
 # или по статусу
-messages = client.get_messages(status='draft')
+messages = await client.get_messages(status='draft')
 # или по типу сообщения (inbox/outbox)
-messages = client.get_messages(msg_type='outbox')
+messages = await client.get_messages(msg_type='outbox')
 # паджинация, по умолчанию возвращается первая страница
-messages = client.get_messages(status='draft', page=4)
+messages = await client.get_messages(status='draft', page=4)
 # или комбинировать параметры как требуется 
 
 # получение файлов сообщения
-messages = client.get_messages()
+messages = await client.get_messages()
 for msg in messages:
     # получение файла из хранилища
     for f in msg.files:
         # сохраняется в f.content
-        client.download(f)
+        await client.download(f)
 
 # получение списка возможных задач
-tasks = client.get_tasks()
+tasks = await client.get_tasks()
 
 # получение списка справочников с данными
-dictionaries = client.get_dictionaries()
+dictionaries = await client.get_dictionaries()
 
 # получение данных из определенного справочника
-d = client.get_dictionary(oid='dictionary_id')
+d = await client.get_dictionary(oid='dictionary_id')
 
 # получение данных профиля
-profile = client.get_profile()
+profile = await client.get_profile()
 
 # получение доступной квоты использования хранилища
-quota = client.get_profile_quota()
+quota = await client.get_profile_quota()
 
 # удаление сообщения 
-client.delete_message(msg_id='message_id')
+await client.delete_message(msg_id='message_id')
+
+# в конце работы не забываем закрывать соединение
+await client.close()
 ```

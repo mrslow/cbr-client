@@ -7,7 +7,7 @@ dependencies = ['httpx', 'pydantic']
 
 setup(
     name='cbr-client',
-    version='0.2.1',
+    version='0.3.0',
     description='Tool for easy working with https://portal5.cbr.ru API',
     long_description=readme,
     long_description_content_type="text/markdown",

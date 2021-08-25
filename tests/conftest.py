@@ -20,14 +20,18 @@ messages_json = json.loads(open('./tests/data/messages.json').read())
 receipts_json = json.loads(open('./tests/data/receipts.json').read())
 
 
+@pytest.mark.asyncio
 @pytest.fixture
-def client():
+async def client():
     c = Client(url=base_url, login='test', password='123', user_agent='pytest')
     yield c
+    await c.close()
 
 
+@pytest.mark.asyncio
 @pytest.fixture
-def invalid_client():
+async def invalid_client():
     c = Client(url=base_url, login='test2', password='321',
                user_agent='pytest')
     yield c
+    await c.close()

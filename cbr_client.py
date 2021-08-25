@@ -49,13 +49,19 @@ class Client:
             url = _BASE_URL
         self.prefix = '/back/rapi2'
         if all((login, password)):
-            self.client = httpx.Client(base_url=url,
-                                       headers=headers,
-                                       auth=(login, password),
-                                       timeout=httpx.Timeout(timeout=timeout))
+            self.client = httpx.AsyncClient(
+                base_url=url,
+                headers=headers,
+                auth=(login, password),
+                timeout=httpx.Timeout(timeout=timeout)
+            )
         else:
             raise ClientException(
                 error_message='Login and password are required')
+
+    @property
+    def is_closed(self):
+        return self.client.is_closed
 
     @staticmethod
     def _set_payload(form, title, text, files):
@@ -69,11 +75,12 @@ class Client:
             'Files': []
         }
         for f in files:
+            signed = f'{f[0][:-6]}.enc' if f[0].endswith('.sig', -4) else None
             data = {
                 'Name': f[0],
-                'Encrypted': int(f[0].endswith('.enc', -4)),
+                'Encrypted': f[0].endswith('.enc', -4),
                 'Size': len(f[1]),
-                'SignedFile': f[0][:-6] if f[0].endswith('.sig', -4) else None,
+                'SignedFile': signed,
                 'ReposytoryType': 'http'
             }
             payload['Files'].append(data)
@@ -95,7 +102,7 @@ class Client:
             ('Content-Range', f'bytes {index}-{index + offset - 1}/{total}')
         ])
 
-    def _partial_upload(self, f, chunk_size):
+    async def _partial_upload(self, f, chunk_size):
         if not f.content or len(f.content) == 0:
             raise ClientException(
                 error_message='Uploaded file must not be empty')
@@ -103,14 +110,19 @@ class Client:
         for i in range(0, len(f.content), chunk_size):
             chunk = f.content[i:i + chunk_size]
             hdrs = self._upload_headers(i, len(chunk), len(f.content))
-            resp = self._request('PUT', f.upload_url, headers=hdrs, data=chunk)
+            resp = await self._request(
+                method='PUT',
+                url=f.upload_url,
+                headers=hdrs,
+                content=chunk
+            )
         return resp
 
-    def _request(self, method, url, **kwargs):
+    async def _request(self, method, url, **kwargs):
         if not url.startswith(self.prefix):
             url = self.prefix + url
         try:
-            resp = self.client.request(method, url, **kwargs)
+            resp = await self.client.request(method, url, **kwargs)
             logger.debug(f'{method} {url} {resp.status_code}')
         except Exception as exc:
             logger.exception('Critical')
@@ -126,57 +138,62 @@ class Client:
             logger.debug(err)
             raise ClientException(**err.dict())
 
-    def get_tasks(self):
-        resp = self._request('GET', '/tasks')
+    async def get_tasks(self):
+        resp = await self._request('GET', '/tasks')
         return [Task(**item) for item in resp]
 
-    def get_profile(self):
-        resp = self._request('GET', '/profile')
+    async def get_profile(self):
+        resp = await self._request('GET', '/profile')
         return Profile(**resp)
 
-    def get_profile_quota(self):
-        resp = self._request('GET', '/profile/quota')
+    async def get_profile_quota(self):
+        resp = await self._request('GET', '/profile/quota')
         return ProfileQuota(**resp)
 
-    def get_dictionaries(self):
-        resp = self._request('GET', '/dictionaries')
+    async def get_dictionaries(self):
+        resp = await self._request('GET', '/dictionaries')
         return [Dictionary(**dictionary) for dictionary in resp]
 
-    def get_dictionary(self, oid):
-        return self._request('GET', f'/dictionaries/{oid}')
+    async def get_dictionary(self, oid):
+        return await self._request('GET', f'/dictionaries/{oid}')
 
-    def create_message(self, files, form, title=None, text=None):
+    async def create_message(self, files, form, title=None, text=None):
         payload = self._set_payload(form, title, text, files)
-        resp = self._request('POST', '/messages', json=payload)
+        resp = await self._request('POST', '/messages', json=payload)
         json = self._update_json(resp, files)
         return Message(**json)
 
-    def upload(self, f, chunked=False, chunk_size=_CHUNK_SIZE):
-        self._request('POST', f.session_url)
+    async def upload(self, f, chunked=False, chunk_size=_CHUNK_SIZE):
+        await self._request('POST', f.session_url)
         if chunked:
-            resp = self._partial_upload(f, chunk_size)
+            resp = await self._partial_upload(f, chunk_size)
         else:
             hdr = self._upload_headers(0, len(f.content), len(f.content))
-            resp = self._request('PUT', f.upload_url, data=f.content,
-                                 headers=hdr)
+            resp = await self._request(
+                method='PUT',
+                url=f.upload_url,
+                content=f.content,
+                headers=hdr
+            )
         return File(**resp)
 
-    def finalize_message(self, msg):
-        return self._request('POST', f'/messages/{msg.oid}')
+    async def finalize_message(self, msg):
+        return await self._request('POST', f'/messages/{msg.oid}')
 
-    def get_receipts(self, msg_id):
-        receipts = self._request('GET', f'/messages/{msg_id}/receipts')
+    async def get_receipts(self, msg_id):
+        receipts = await self._request('GET', f'/messages/{msg_id}/receipts')
         return [Receipt(**meta) for meta in receipts]
 
-    def download(self, f):
-        f.content = self._request('GET', f.download_url)
+    async def download(self, f):
+        f.content = await self._request('GET', f.download_url)
 
-    def get_messages(self,
-                     form: Optional[str] = None,
-                     msg_type: Optional[str] = None,
-                     status: Optional[str] = None,
-                     page: int = 1
-                     ):
+    async def get_messages(
+            self,
+            form: Optional[str] = None,
+            msg_type: Optional[str] = None,
+            status: Optional[str] = None,
+            page: int = 1
+    ):
         params = {'Page': page}
         if form:
             params['Task'] = tasks.get(form)
@@ -184,11 +201,22 @@ class Client:
             params['Type'] = msg_type
         if status:
             params['Status'] = status
-        messages = self._request('GET', '/messages', params=params)
+        messages = await self._request('GET', '/messages', params=params)
         return [Message(**msg) for msg in messages]
 
-    def delete_message(self, msg_id):
-        return self._request('DELETE', f'/messages/{msg_id}')
+    async def delete_message(self, msg_id):
+        return await self._request('DELETE', f'/messages/{msg_id}')
+
+    async def close(self):
+        if not self.is_closed:
+            await self.client.aclose()
+
+    async def __aenter__(self):
+        await self.client.__aenter__()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.client.__aexit__(exc_type, exc_val, exc_tb)
 
 
 class ReducedRepresentation:
