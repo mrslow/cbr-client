@@ -1,9 +1,7 @@
 import httpx
 import pytest
 
-from pydantic import BaseModel, Field
-from cbr_client import (Client, ClientException, _BASE_URL, File,
-                        ReducedRepresentation)
+from cbr_client import Client, ClientException, _BASE_URL, File
 from conftest import base_url, messages_json, correct_headers
 
 
@@ -35,7 +33,7 @@ async def test_partial_upload_no_content(client):
 
 @pytest.mark.asyncio
 async def test_request_exception(httpx_mock, client):
-    def raise_timeout(request, extensions: dict):
+    def raise_timeout(request):
         raise httpx.ReadTimeout('Test timeout error', request=request)
 
     httpx_mock.add_callback(raise_timeout)
@@ -50,7 +48,7 @@ async def test_download(httpx_mock, client):
     f = File(**messages_json[0]['Files'][0])
     httpx_mock.add_response(
         status_code=200,
-        data=b'test',
+        content=b'test',
         headers={'Content-Type': 'application/octet-stream'},
         method='GET',
         url=(f'{base_url}/back/rapi2/messages/'
@@ -82,13 +80,15 @@ def test_upload_json(client):
     assert new_json['Files'][0]['Content'] == b'test'
 
 
-def test_repr_field():
-    class Model(ReducedRepresentation, BaseModel):
-        a: int = Field()
-        b: int = Field(repr=True)
-        c: int = Field(repr=False)
-
-    m = Model(a=1, b=2, c=3)
-    assert "a=1" in repr(m)
-    assert "b=2" in repr(m)
-    assert "c=3" not in repr(m)
+def test_exception_repr():
+    exc = ClientException(
+        status=401,
+        error_code='ACCOUNT_NOT_FOUND',
+        error_message='Аккаунт не найден',
+        more_info={}
+    )
+    assert repr(exc) == (
+        'ClientException(status=401, error_code="ACCOUNT_NOT_FOUND", '
+        'error_message="Аккаунт не найден", more_info={})'
+    )
+    assert str(exc) == '401 Аккаунт не найден'

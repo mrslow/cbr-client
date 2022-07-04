@@ -37,6 +37,15 @@ class ClientException(Exception):
         self.error_message = error_message
         self.more_info = more_info
 
+    def __repr__(self):
+        return (f'ClientException(status={self.status}, '
+                f'error_code="{self.error_code}", '
+                f'error_message="{self.error_message}", '
+                f'more_info={self.more_info})')
+
+    def __str__(self):
+        return f'{self.status} {self.error_message}'
+
 
 class Client:
 
@@ -219,15 +228,6 @@ class Client:
         await self.client.__aexit__(exc_type, exc_val, exc_tb)
 
 
-class ReducedRepresentation:
-    def __repr_args__(self: BaseModel) -> "ReprArgs":
-        return [
-            (key, value)
-            for key, value in self.__dict__.items()
-            if self.__fields__[key].field_info.extra.get("repr", True)
-        ]
-
-
 class Repository(BaseModel):
     type: str = Field(alias='RepositoryType', default=None)
     host: str = Field(alias='Host', default=None)
@@ -235,7 +235,7 @@ class Repository(BaseModel):
     path: str = Field(alias='Path', default=None)
 
 
-class File(ReducedRepresentation, BaseModel):
+class File(BaseModel):
     name: str = Field(alias='Name', default=None)
     content: bytes = Field(alias='Content', default=None, repr=False)
     size: int = Field(alias='Size', default=0)
