@@ -7,7 +7,7 @@ dependencies = ['httpx', 'pydantic']
 
 setup(
     name='cbr-client',
-    version='0.3.1',
+    version='0.3.2',
     description='Tool for easy working with https://portal5.cbr.ru API',
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -26,6 +26,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9'
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10'
     ]
 )

@@ -72,6 +72,22 @@ async def test_delete(httpx_mock, client):
     assert resp == b''
 
 
+@pytest.mark.asyncio
+async def test_invalid_response(httpx_mock, client):
+    httpx_mock.add_response(
+        status_code=502,
+        headers={'Content-Type': 'application/octet-stream'},
+        method='GET',
+        url=f'{base_url}/back/rapi2/test'
+    )
+    with pytest.raises(ClientException) as exc:
+        await client._request('GET', '/test')
+    assert exc.value.error_message == 'Bad Gateway'
+    assert exc.value.status == 502
+    assert exc.value.error_code == 'INCORRECT_RESPONSE_CONTENT'
+    assert exc.value.more_info is None
+
+
 def test_upload_json(client):
     json = {'Files': [{'Name': 'a'}]}
     files = [('a', b'test')]

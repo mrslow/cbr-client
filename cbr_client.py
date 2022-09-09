@@ -1,6 +1,7 @@
 import httpx
 import logging
 
+from dataclasses import dataclass, InitVar, asdict
 from datetime import datetime
 from pydantic import BaseModel, Field
 from typing import List, Optional
@@ -127,6 +128,10 @@ class Client:
             )
         return resp
 
+    @staticmethod
+    def is_json(resp):
+        return 'application/json' in resp.headers.get('content-type', '')
+
     async def _request(self, method, url, **kwargs):
         if not url.startswith(self.prefix):
             url = self.prefix + url
@@ -138,12 +143,9 @@ class Client:
             raise ClientException(error_message=str(exc))
         try:
             resp.raise_for_status()
-            if 'application/json' in resp.headers.get('content-type', ''):
-                return resp.json()
-            else:
-                return resp.content
-        except httpx.HTTPStatusError:
-            err = Error(**resp.json())
+            return resp.json() if self.is_json(resp) else resp.content
+        except httpx.HTTPStatusError as exc:
+            err = Error(**resp.json()) if self.is_json(resp) else RespError(exc)
             logger.debug(err)
             raise ClientException(**err.dict())
 
@@ -347,3 +349,21 @@ class Error(BaseModel):
     error_code: str = Field(alias='ErrorCode')
     error_message: str = Field(alias='ErrorMessage')
     more_info: Optional[dict] = Field(alias='MoreInfo')
+
+
+@dataclass
+class RespError:
+    exc: InitVar[httpx.HTTPStatusError]
+    status: int = Field(init=False)
+    error_code: str = Field(init=False)
+    error_message: str = Field(init=False)
+    more_info: Optional[dict] = Field(init=False)
+
+    def __post_init__(self, exc: httpx.HTTPStatusError):
+        self.status: int = exc.response.status_code
+        self.error_code: str = 'INCORRECT_RESPONSE_CONTENT'
+        self.error_message: str = exc.response.reason_phrase
+        self.more_info = None
+
+    def dict(self):
+        return asdict(self)
