@@ -1,5 +1,6 @@
 import httpx
 import logging
+import re
 
 from datetime import datetime
 from pydantic import BaseModel, Field
@@ -8,6 +9,7 @@ from uuid import UUID
 
 _BASE_URL = httpx.URL('https://portal5.cbr.ru')
 _CHUNK_SIZE = 2**16
+_MCHD = re.compile(r'^DOVER_CBR_(?:\d{10}|\d{12})_\d{8}_.{1,10}.[xX][mM][lL]$')
 
 logger = logging.getLogger('cbr-client')
 logger.setLevel('DEBUG')
@@ -23,6 +25,12 @@ tasks = {
     '2-ТРАНСПОРТ': 'Zadacha_98',
     '3-ТРАНСПОРТ': 'Zadacha_98',
     '1-МЕД': 'Zadacha_98',
+}
+
+type_map = {
+    'sig': 'Sign',
+    'xml': 'SerializedWebForm',
+    'poa': 'PowerOfAttorney'
 }
 
 
@@ -49,14 +57,24 @@ class ClientException(Exception):
 
 class Client:
 
-    def __init__(self, *, login: str, password: str, url: str = None,
-                 user_agent: str = None, timeout: float = 5.0):
+    def __init__(self,
+                 *,
+                 login: str,
+                 password: str,
+                 url: str = None,
+                 user_agent: str = None,
+                 timeout: float = 5.0,
+                 api_version: str = 'v2'):
         headers = {'Accept': 'application/json'}
         if user_agent:
             headers.update({'User-Agent': user_agent})
+        if api_version not in ('v1', 'v2'):
+            raise ClientException(
+                error_message='API version must be `v1` or `v2`')
+        self.api_version = api_version
+        self.prefix = '/back/rapi2'
         if not url:
             url = _BASE_URL
-        self.prefix = '/back/rapi2'
         if all((login, password)):
             self.client = httpx.AsyncClient(
                 base_url=url,
@@ -73,10 +91,28 @@ class Client:
         return self.client.is_closed
 
     @staticmethod
-    def _set_payload(form, title, text, files):
+    def _get_filetype(name):
+        s = name.split('.')
+        tail = s[-1]
+        if s[0].startswith('DOVER_CBR') and tail != 'sig':
+            tail = 'poa'
+            if not _MCHD.match(name):
+                raise ClientException(
+                    error_message=f'Filename {name} does not match pattern')
+        return type_map.get(tail, 'Document')
+
+    @staticmethod
+    def _get_signed(name):
+        s = name.split('.')
+        tail = s[-1]
+        if tail == 'sig':
+            signed = '.'.join(s[:2])
+            return f'{signed}.enc' if signed.endswith('.zip') else signed
+
+    def _set_payload(self, form, title, text, files):
         if form not in tasks:
             raise ClientException(
-                error_message=f'Неизвестный тип задачи {form}')
+                error_message=f'Unknown task type {form}')
         payload = {
             'Task': tasks[form],
             'Title': title or f'Отчет {form}',
@@ -84,12 +120,13 @@ class Client:
             'Files': []
         }
         for f in files:
-            signed = f'{f[0][:-6]}.enc' if f[0].endswith('.sig', -4) else None
+            filetype = f[2] if len(f) == 3 else self._get_filetype(f[0])
             data = {
                 'Name': f[0],
                 'Encrypted': f[0].endswith('.enc', -4),
                 'Size': len(f[1]),
-                'SignedFile': signed,
+                'FileType': filetype,
+                'SignedFile': self._get_signed(f[0]),
                 'ReposytoryType': 'http'
             }
             payload['Files'].append(data)
@@ -133,7 +170,7 @@ class Client:
 
     async def _request(self, method, url, **kwargs):
         if not url.startswith(self.prefix):
-            url = self.prefix + url
+            url = f'{self.prefix}/{self.api_version}' + url
         try:
             resp = await self.client.request(method, url, **kwargs)
             logger.debug(f'{method} {url} {resp.status_code}')
@@ -241,6 +278,7 @@ class File(BaseModel):
     content: bytes = Field(alias='Content', default=None, repr=False)
     size: int = Field(alias='Size', default=0)
     encrypted: bool = Field(alias='Encrypted', default=False)
+    filetype: str = Field(alias='FileType', default=None)
     signed_file: str = Field(alias='SignedFile', default=None)
     description: str = Field(alias='Description', default=None)
     oid: UUID = Field(alias='Id', default=None)

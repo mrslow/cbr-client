@@ -16,6 +16,13 @@ def test_client_no_url():
     assert client.client.base_url == _BASE_URL
 
 
+@pytest.mark.parametrize('vers', (None, 'v3'))
+def test_client_invalid_api_version(vers):
+    with pytest.raises(ClientException) as exc:
+        Client(url=base_url, login='test', password='test', api_version=vers)
+    assert exc.value.error_message == 'API version must be `v1` or `v2`'
+
+
 @pytest.mark.asyncio
 async def test_client_contextmanager():
     async with Client(login='test', password='test') as client:
@@ -66,7 +73,7 @@ async def test_delete(httpx_mock, client):
         status_code=200,
         headers={'Content-Type': 'application/octet-stream'},
         method='DELETE',
-        url=f'{base_url}/back/rapi2/messages/{msg_id}'
+        url=f'{base_url}/back/rapi2/{client.api_version}/messages/{msg_id}'
     )
     resp = await client.delete_message(msg_id=msg_id)
     assert resp == b''
@@ -78,7 +85,7 @@ async def test_invalid_response(httpx_mock, client):
         status_code=502,
         headers={'Content-Type': 'application/octet-stream'},
         method='GET',
-        url=f'{base_url}/back/rapi2/test'
+        url=f'{base_url}/back/rapi2/{client.api_version}/test'
     )
     with pytest.raises(ClientException) as exc:
         await client._request('GET', '/test')

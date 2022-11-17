@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+testpaths = "tests"
+asyncio_mode = "auto"
+addopts = "--maxfail=1 --capture=no --verbose --tb=short --cov --cov-report=term-missing"
+
+[tool.coverage.run]
+omit = [
+    ".venv/*",
+    "venv/*",
+    ".env/*",
+    "env/*",
+    "tests/*"
+]

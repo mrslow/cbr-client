@@ -12,7 +12,7 @@ async def test_get_receipts(httpx_mock, client):
         json=receipts_json,
         headers={'Content-Type': 'application/json'},
         method='GET',
-        url=f'{base_url}/back/rapi2/messages/{msg_id}/receipts',
+        url=f'{base_url}/back/rapi2/{client.api_version}/messages/{msg_id}/receipts',
         match_headers=correct_headers
     )
     receipts = await client.get_receipts(msg_id=msg_id)

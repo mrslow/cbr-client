@@ -22,7 +22,7 @@ pip install cbr-client
 from cbr_client import Client
 
 conn_params = dict(
-    url='https://portal5test.cbr.ru/back/rapi2',
+    url='https://portal5test.cbr.ru',
     login='test',
     password='test',
     user_agent='test app'
@@ -34,9 +34,9 @@ client = Client(**conn_params)
 #     ...
 
 files = [
-        ('report.zip.enc', 'encrypted report content'),
-        ('report.zip.enc.1.sig', 'operator signature'),
-        ('report.zip.enc.2.sig', 'client signature')
+        ('report.zip.enc', b'encrypted report content'),
+        ('report.zip.1.sig', b'operator signature'),
+        ('report.zip.2.sig', b'client signature')
     ]
 
 # отправка отчета на портал ЦБ
