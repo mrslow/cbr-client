@@ -11,3 +11,19 @@ omit = [
     "env/*",
     "tests/*"
 ]
+
+[tool.isort]
+atomic = true
+profile = "black"
+line_length = 79
+skip_gitignore = true
+
+[tool.black]
+line-length = 79
+
+[tool.ruff]
+line-length = 79
+select = ["E", "F", "W", "C", "I", "Q"]
+ignore = ["E402"]
+unfixable = ["FBT"]
+fix = true
