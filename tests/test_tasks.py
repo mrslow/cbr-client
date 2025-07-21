@@ -1,10 +1,8 @@
-import pytest
 from conftest import base_url, correct_headers, tasks_json
 
 from cbr_client import Task
 
 
-@pytest.mark.asyncio
 async def test_tasks(httpx_mock, client):
     httpx_mock.add_response(
         status_code=200,

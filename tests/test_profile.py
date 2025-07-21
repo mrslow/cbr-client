@@ -17,7 +17,6 @@ wrong_resp = {
 }
 
 
-@pytest.mark.asyncio
 async def test_get_profile_ok(httpx_mock, client):
     httpx_mock.add_response(
         status_code=200,
@@ -32,7 +31,6 @@ async def test_get_profile_ok(httpx_mock, client):
     assert info.status == "Active"
 
 
-@pytest.mark.asyncio
 async def test_get_profile_no_auth(httpx_mock, invalid_client):
     httpx_mock.add_response(
         status_code=401,
@@ -48,7 +46,6 @@ async def test_get_profile_no_auth(httpx_mock, invalid_client):
     assert exc.value.status == 401
 
 
-@pytest.mark.asyncio
 async def test_get_profile_quota(httpx_mock, client):
     httpx_mock.add_response(
         status_code=200,

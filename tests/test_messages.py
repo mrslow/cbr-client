@@ -24,7 +24,6 @@ def upload_file():
     yield f, file_data
 
 
-@pytest.mark.asyncio
 async def test_create_message(httpx_mock, client):
     httpx_mock.add_response(
         status_code=200,
@@ -34,12 +33,11 @@ async def test_create_message(httpx_mock, client):
         url=f"{base_url}/back/rapi2/{client.api_version}/messages",
         match_headers=correct_headers,
     )
-    msg = await client.create_message(upload_files[:-2], "1-ПИ")
+    msg = await client.create_message(upload_files[:-2], "Zadacha_61")
     assert isinstance(msg, Message)
     assert msg.status == "draft"
 
 
-@pytest.mark.asyncio
 @pytest.mark.parametrize("chunked", (True, False))
 async def test_upload(httpx_mock, client, upload_file, chunked):
     f, data = upload_file
@@ -59,13 +57,13 @@ async def test_upload(httpx_mock, client, upload_file, chunked):
         method="PUT",
         url=f"{base_url}{f.upload_url}",
         match_headers=correct_headers,
+        is_reusable=True,
     )
     resp = await client.upload(f, chunked=chunked, chunk_size=6)
     assert f.name == resp.name
     assert f.size == resp.size
 
 
-@pytest.mark.asyncio
 async def test_finalize_message(httpx_mock, client):
     msg = Message(**messages_json[0])
     httpx_mock.add_response(
@@ -79,14 +77,13 @@ async def test_finalize_message(httpx_mock, client):
     assert resp == b""
 
 
-@pytest.mark.asyncio
-async def test_create_message_error(client):
-    with pytest.raises(ClientException) as exc:
-        await client.create_message(upload_files, "2-ПИ")
-    assert exc.value.error_message == "Неизвестный тип задачи 2-ПИ"
+# @pytest.mark.asyncio
+# async def test_create_message_error(client):
+#     with pytest.raises(ClientException) as exc:
+#         await client.create_message(upload_files, "2-ПИ")
+#     assert exc.value.error_message == "Неизвестный тип задачи 2-ПИ"
 
 
-@pytest.mark.asyncio
 async def test_create_message_mchd_error(client):
     fn = "DOVER_CBR_1234567890111_20000101_1.xml"
     err = f"Имя файла {fn} не соответствует шаблону"
@@ -95,7 +92,6 @@ async def test_create_message_mchd_error(client):
     assert exc.value.error_message == err
 
 
-@pytest.mark.asyncio
 async def test_get_messages(httpx_mock, client):
     httpx_mock.add_response(
         status_code=200,
@@ -109,7 +105,7 @@ async def test_get_messages(httpx_mock, client):
         match_headers=correct_headers,
     )
     resp = await client.get_messages(
-        form="1-ПИ", msg_type="outbox", status="registered"
+        task="Zadacha_61", msg_type="outbox", status="registered"
     )
     assert isinstance(resp, list)
     assert isinstance(resp[0], Message)

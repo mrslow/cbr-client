@@ -1,10 +1,9 @@
 # core
-httpx
-pydantic
+httpx<1
+pydantic<2
 # pytest
 pytest
 pytest-asyncio
 pytest-coverage
 pytest-httpx
 pytest-pep8
-

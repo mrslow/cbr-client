@@ -1,10 +1,8 @@
-import pytest
 from conftest import base_url, correct_headers, receipts_json
 
 from cbr_client import Receipt
 
 
-@pytest.mark.asyncio
 async def test_get_receipts(httpx_mock, client):
     msg_id = "d66c4f1f-a6e5-4996-a6fb-fbb308135585"
     httpx_mock.add_response(

@@ -29,14 +29,12 @@ def test_client_invalid_api_version(vers):
     assert exc.value.error_message == error_text["version"]
 
 
-@pytest.mark.asyncio
 async def test_client_contextmanager():
     async with Client(login="test", password="test") as client:
         assert not client.is_closed
         assert client.client._auth._auth_header == "Basic dGVzdDp0ZXN0"
 
 
-@pytest.mark.asyncio
 async def test_partial_upload_no_content(client):
     f = File(**messages_json[0]["Files"][0])
     with pytest.raises(ClientException) as exc:
@@ -44,7 +42,6 @@ async def test_partial_upload_no_content(client):
     assert exc.value.error_message == error_text["size"]
 
 
-@pytest.mark.asyncio
 async def test_request_exception(httpx_mock, client):
     def raise_timeout(request):
         raise httpx.ReadTimeout("Test timeout error", request=request)
@@ -56,7 +53,6 @@ async def test_request_exception(httpx_mock, client):
     assert exc.value.args[0] == "Test timeout error"
 
 
-@pytest.mark.asyncio
 async def test_download(httpx_mock, client):
     f = File(**messages_json[0]["Files"][0])
     httpx_mock.add_response(
@@ -75,7 +71,6 @@ async def test_download(httpx_mock, client):
     assert f.content == b"test"
 
 
-@pytest.mark.asyncio
 async def test_delete(httpx_mock, client):
     msg_id = "89f43940-5a3f-4343-a550-d0f0d2152ff5"
     httpx_mock.add_response(
@@ -88,7 +83,6 @@ async def test_delete(httpx_mock, client):
     assert resp == b""
 
 
-@pytest.mark.asyncio
 async def test_invalid_response(httpx_mock, client):
     httpx_mock.add_response(
         status_code=502,

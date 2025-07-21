@@ -9,23 +9,14 @@ from pydantic import BaseModel, Field
 
 _BASE_URL = httpx.URL("https://portal5.cbr.ru")
 _CHUNK_SIZE = 2**16
-_MCHD = re.compile(r"^DOVER_CBR_(?:\d{10}|\d{12})_\d{8}_.{1,10}.[xX][mM][lL]$")
+_MCHD = re.compile(
+    r"^((DOVER_CBR_(?:\d{10}|\d{12}))|ON_EMCHD)"
+    r"_\d{8}_(.{1,10}|[a-fA-F0-9-]{36})\.[xX][mM][lL]$"
+)
 
 logger = logging.getLogger("cbr-client")
 logger.setLevel("DEBUG")
 
-
-tasks = {
-    "1-ПИ": "Zadacha_61",
-    "1-ИЦБ": "Zadacha_98",
-    "1-АРЕНДА": "Zadacha_98",
-    "1-ПОЕЗДКИ": "Zadacha_98",
-    "1-РОУМИНГ": "Zadacha_98",
-    "1-ТРАНСПОРТ": "Zadacha_98",
-    "2-ТРАНСПОРТ": "Zadacha_98",
-    "3-ТРАНСПОРТ": "Zadacha_98",
-    "1-МЕД": "Zadacha_98",
-}
 
 type_map = {
     "sig": "Sign",
@@ -101,7 +92,7 @@ class Client:
     def _get_filetype(name):
         s = name.split(".")
         tail = s[-1]
-        if s[0].startswith("DOVER_CBR") and tail != "sig":
+        if s[0].startswith(("DOVER_CBR", "ON_EMCHD")) and tail != "sig":
             tail = "poa"
             if not _MCHD.match(name):
                 raise ClientException(
@@ -117,17 +108,15 @@ class Client:
             signed = ".".join(s[:2])
             return f"{signed}.enc" if signed.endswith(".zip") else signed
 
-    def _set_payload(self, form, title, text, files):
-        if form not in tasks:
-            raise ClientException(
-                error_message=f"Неизвестный тип задачи {form}"
-            )
+    def _set_payload(self, task, title, text, corr_id, files):
         payload = {
-            "Task": tasks[form],
-            "Title": title or f"Отчет {form}",
+            "Task": task,
+            "Title": title,
             "Text": text,
             "Files": [],
         }
+        if corr_id is not None:
+            payload["CorrelationId"] = str(corr_id)
         for f in files:
             filetype = f[2] if len(f) == 3 else self._get_filetype(f[0])
             data = {
@@ -207,8 +196,10 @@ class Client:
     async def get_dictionary(self, oid):
         return await self._request("GET", f"/dictionaries/{oid}")
 
-    async def create_message(self, files, form, title=None, text=None):
-        payload = self._set_payload(form, title, text, files)
+    async def create_message(
+        self, files, task, title=None, text=None, corr_id=None
+    ):
+        payload = self._set_payload(task, title, text, corr_id, files)
         resp = await self._request("POST", "/messages", json=payload)
         json = self._update_json(resp, files)
         return Message(**json)
@@ -236,14 +227,14 @@ class Client:
 
     async def get_messages(
         self,
-        form: Optional[str] = None,
+        task: Optional[str] = None,
         msg_type: Optional[str] = None,
         status: Optional[str] = None,
         page: int = 1,
     ):
         params = {"Page": page}
-        if form:
-            params["Task"] = tasks.get(form)
+        if task:
+            params["Task"] = task
         if msg_type:
             params["Type"] = msg_type
         if status:
