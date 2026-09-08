@@ -78,6 +78,7 @@ class Client:
                 headers=headers,
                 auth=(login, password),
                 timeout=httpx.Timeout(timeout=timeout),
+                verify=False,
             )
         else:
             raise ClientException(
